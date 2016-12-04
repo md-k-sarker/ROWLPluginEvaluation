@@ -1,0 +1,330 @@
+@prefix : <http://www.wright.edu/dase/ex> .
+@prefix ex: <http://www.wright.edu/dase/ex#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix evaluation: <http://www.wright.edu/dase/Evaluation#> .
+@prefix untitled-ontology-424: <http://www.semanticweb.org/sarker/ontologies/2016/10/untitled-ontology-424#> .
+@base <http://www.wright.edu/dase/ex> .
+
+<http://www.wright.edu/dase/ex> rdf:type owl:Ontology .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://www.wright.edu/dase/exDASE_RULE
+:DASE_RULE rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.wright.edu/dase/exfreshObjectProperty1
+:freshObjectProperty1 rdf:type owl:ObjectProperty .
+
+
+###  http://www.wright.edu/dase/Evaluation#awards
+evaluation:awards rdf:type owl:ObjectProperty .
+
+
+###  http://www.wright.edu/dase/Evaluation#fundedBy
+evaluation:fundedBy rdf:type owl:ObjectProperty .
+
+
+###  http://www.wright.edu/dase/Evaluation#hasBrother
+evaluation:hasBrother rdf:type owl:ObjectProperty .
+
+
+###  http://www.wright.edu/dase/Evaluation#hasChild
+evaluation:hasChild rdf:type owl:ObjectProperty .
+
+
+###  http://www.wright.edu/dase/Evaluation#hasDaughter
+evaluation:hasDaughter rdf:type owl:ObjectProperty ;
+                       owl:propertyChainAxiom ( ex:newProp
+                                                evaluation:hasChild
+                                                ex:newProp2
+                                              ) .
+
+
+###  http://www.wright.edu/dase/Evaluation#hasMother
+evaluation:hasMother rdf:type owl:ObjectProperty .
+
+
+###  http://www.wright.edu/dase/Evaluation#hasNephew
+evaluation:hasNephew rdf:type owl:ObjectProperty ;
+                     owl:propertyChainAxiom ( :freshObjectProperty1
+                                              evaluation:hasBrother
+                                              evaluation:hasSon
+                                            ) .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource evaluation:hasNephew ;
+   owl:annotatedProperty owl:propertyChainAxiom ;
+   owl:annotatedTarget ( :freshObjectProperty1
+                         evaluation:hasBrother
+                         evaluation:hasSon
+                       ) ;
+   :DASE_RULE "R5___Person(?x) ^ hasBrother(?x, ?y) ^ hasSon(?y, ?n) -> hasNephew(?x, ?n)______http://www.wright.edu/dase/exfreshObjectProperty1"^^xsd:string
+ ] .
+
+
+###  http://www.wright.edu/dase/Evaluation#hasParent
+evaluation:hasParent rdf:type owl:ObjectProperty .
+
+
+###  http://www.wright.edu/dase/Evaluation#hasSon
+evaluation:hasSon rdf:type owl:ObjectProperty .
+
+
+###  http://www.wright.edu/dase/Evaluation#moreBiodiverseThan
+evaluation:moreBiodiverseThan rdf:type owl:ObjectProperty ;
+                              owl:propertyChainAxiom ( :freshObjectProperty1
+                                                       owl:topObjectProperty
+                                                       :freshObjectProperty1
+                                                     ) .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource evaluation:moreBiodiverseThan ;
+   owl:annotatedProperty owl:propertyChainAxiom ;
+   owl:annotatedTarget ( :freshObjectProperty1
+                         owl:topObjectProperty
+                         :freshObjectProperty1
+                       ) ;
+   :DASE_RULE "R6___Forest(?x) ^ Desert(?y) -> moreBiodiverseThan(?x, ?y)______http://www.w3.org/2002/07/owl#topObjectProperty___http://www.wright.edu/dase/exfreshObjectProperty1"^^xsd:string
+ ] .
+
+
+###  http://www.wright.edu/dase/Evaluation#youngerThan
+evaluation:youngerThan rdf:type owl:ObjectProperty ;
+                       owl:propertyChainAxiom ( ex:newProp3
+                                                owl:topObjectProperty
+                                                ex:newProp4
+                                              ) .
+
+
+###  http://www.wright.edu/dase/ex#newProp
+ex:newProp rdf:type owl:ObjectProperty .
+
+
+###  http://www.wright.edu/dase/ex#newProp2
+ex:newProp2 rdf:type owl:ObjectProperty .
+
+
+###  http://www.wright.edu/dase/ex#newProp3
+ex:newProp3 rdf:type owl:ObjectProperty .
+
+
+###  http://www.wright.edu/dase/ex#newProp4
+ex:newProp4 rdf:type owl:ObjectProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.wright.edu/dase/Evaluation#Desert
+evaluation:Desert rdf:type owl:Class ;
+                  rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                    owl:onProperty :freshObjectProperty1 ;
+                                    owl:hasSelf "true"^^xsd:boolean
+                                  ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource evaluation:Desert ;
+   owl:annotatedProperty rdfs:subClassOf ;
+   owl:annotatedTarget [ rdf:type owl:Restriction ;
+                         owl:onProperty :freshObjectProperty1 ;
+                         owl:hasSelf "true"^^xsd:boolean
+                       ] ;
+   :DASE_RULE "R6___Forest(?x) ^ Desert(?y) -> moreBiodiverseThan(?x, ?y)______http://www.w3.org/2002/07/owl#topObjectProperty___http://www.wright.edu/dase/exfreshObjectProperty1"^^xsd:string
+ ] .
+
+
+###  http://www.wright.edu/dase/Evaluation#EducationalInstitution
+evaluation:EducationalInstitution rdf:type owl:Class ;
+                                  rdfs:subClassOf evaluation:Organization .
+
+
+###  http://www.wright.edu/dase/Evaluation#Father
+evaluation:Father rdf:type owl:Class ;
+                  rdfs:subClassOf evaluation:Parent .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource evaluation:Father ;
+   owl:annotatedProperty rdfs:subClassOf ;
+   owl:annotatedTarget evaluation:Parent ;
+   :DASE_RULE "R1___Father(?x)->Parent(?x)___"^^xsd:string
+ ] .
+
+
+###  http://www.wright.edu/dase/Evaluation#Female
+evaluation:Female rdf:type owl:Class ;
+                  rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                    owl:onProperty ex:newProp2 ;
+                                    owl:hasSelf "true"^^xsd:boolean
+                                  ] .
+
+
+###  http://www.wright.edu/dase/Evaluation#Forest
+evaluation:Forest rdf:type owl:Class ;
+                  rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                    owl:onProperty :freshObjectProperty1 ;
+                                    owl:hasSelf "true"^^xsd:boolean
+                                  ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource evaluation:Forest ;
+   owl:annotatedProperty rdfs:subClassOf ;
+   owl:annotatedTarget [ rdf:type owl:Restriction ;
+                         owl:onProperty :freshObjectProperty1 ;
+                         owl:hasSelf "true"^^xsd:boolean
+                       ] ;
+   :DASE_RULE "R6___Forest(?x) ^ Desert(?y) -> moreBiodiverseThan(?x, ?y)______http://www.w3.org/2002/07/owl#topObjectProperty___http://www.wright.edu/dase/exfreshObjectProperty1"^^xsd:string
+ ] .
+
+
+###  http://www.wright.edu/dase/Evaluation#Human
+evaluation:Human rdf:type owl:Class .
+
+
+###  http://www.wright.edu/dase/Evaluation#MedicalDegree
+evaluation:MedicalDegree rdf:type owl:Class .
+
+
+###  http://www.wright.edu/dase/Evaluation#MedicalSchool
+evaluation:MedicalSchool rdf:type owl:Class .
+
+
+###  http://www.wright.edu/dase/Evaluation#Mother
+evaluation:Mother rdf:type owl:Class .
+
+
+###  http://www.wright.edu/dase/Evaluation#Organization
+evaluation:Organization rdf:type owl:Class .
+
+
+###  http://www.wright.edu/dase/Evaluation#Parent
+evaluation:Parent rdf:type owl:Class ;
+                  rdfs:subClassOf evaluation:Human .
+
+
+###  http://www.wright.edu/dase/Evaluation#Person
+evaluation:Person rdf:type owl:Class ;
+                  rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                    owl:onProperty :freshObjectProperty1 ;
+                                    owl:hasSelf "true"^^xsd:boolean
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty ex:newProp ;
+                                    owl:hasSelf "true"^^xsd:boolean
+                                  ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource evaluation:Person ;
+   owl:annotatedProperty rdfs:subClassOf ;
+   owl:annotatedTarget [ rdf:type owl:Restriction ;
+                         owl:onProperty :freshObjectProperty1 ;
+                         owl:hasSelf "true"^^xsd:boolean
+                       ] ;
+   :DASE_RULE "R5___Person(?x) ^ hasBrother(?x, ?y) ^ hasSon(?y, ?n) -> hasNephew(?x, ?n)______http://www.wright.edu/dase/exfreshObjectProperty1"^^xsd:string
+ ] .
+
+
+###  http://www.wright.edu/dase/Evaluation#PublicUniversity
+evaluation:PublicUniversity rdf:type owl:Class .
+
+
+###  http://www.wright.edu/dase/Evaluation#StateGovernment
+evaluation:StateGovernment rdf:type owl:Class .
+
+
+###  http://www.wright.edu/dase/Evaluation#Teenager
+evaluation:Teenager rdf:type owl:Class ;
+                    rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                      owl:onProperty ex:newProp3 ;
+                                      owl:hasSelf "true"^^xsd:boolean
+                                    ] .
+
+
+###  http://www.wright.edu/dase/Evaluation#Twen
+evaluation:Twen rdf:type owl:Class ;
+                rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                  owl:onProperty ex:newProp4 ;
+                                  owl:hasSelf "true"^^xsd:boolean
+                                ] .
+
+
+###  http://www.wright.edu/dase/Evaluation#University
+evaluation:University rdf:type owl:Class ;
+                      rdfs:subClassOf evaluation:EducationalInstitution .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource evaluation:University ;
+   owl:annotatedProperty rdfs:subClassOf ;
+   owl:annotatedTarget evaluation:EducationalInstitution ;
+   :DASE_RULE "R2___University(?x)->EducationalInstitution(?x)___"^^xsd:string
+ ] .
+
+
+#################################################################
+#    General axioms
+#################################################################
+
+[ rdf:type owl:Axiom ;
+  owl:annotatedSource [ owl:intersectionOf ( evaluation:EducationalInstitution
+                                             [ rdf:type owl:Restriction ;
+                                               owl:onProperty evaluation:awards ;
+                                               owl:someValuesFrom evaluation:MedicalDegree
+                                             ]
+                                           ) ;
+                        rdf:type owl:Class ;
+                        rdfs:subClassOf evaluation:MedicalSchool
+                      ] ;
+  owl:annotatedProperty rdfs:subClassOf ;
+  owl:annotatedTarget evaluation:MedicalSchool ;
+  :DASE_RULE "R4___EducationalInstitution(?x) ^ awards(?x,?y) ^ MedicalDegree(?y) -> MedicalSchool(?x)___"^^xsd:string
+] .
+
+
+[ owl:intersectionOf ( evaluation:Person
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty [ owl:inverseOf evaluation:hasParent
+                                        ] ;
+                         owl:someValuesFrom evaluation:Female
+                       ]
+                     ) ;
+  rdf:type owl:Class ;
+  rdfs:subClassOf evaluation:Mother
+] .
+
+
+[ owl:intersectionOf ( evaluation:University
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty evaluation:fundedBy ;
+                         owl:someValuesFrom evaluation:StateGovernment
+                       ]
+                     ) ;
+  rdf:type owl:Class ;
+  rdfs:subClassOf evaluation:PublicUniversity
+] .
+
+
+[ rdf:type owl:Axiom ;
+  owl:annotatedSource [ rdf:type owl:Restriction ;
+                        owl:onProperty [ owl:inverseOf evaluation:hasMother
+                                       ] ;
+                        owl:someValuesFrom evaluation:Person ;
+                        rdfs:subClassOf evaluation:Parent
+                      ] ;
+  owl:annotatedProperty rdfs:subClassOf ;
+  owl:annotatedTarget evaluation:Parent ;
+  :DASE_RULE "R3___Person(?x) ^ hasMother(?x,?y) -> Parent(?y)___"^^xsd:string
+] .
+
+
+###  Generated by the OWL API (version 4.2.5.20160517-0735) https://github.com/owlcs/owlapi

@@ -1,0 +1,97 @@
+System started at: 5:32:02 PM
+
+
+################################ Ontology Questions ###############
+Question 1: Every father is a parent.
+Tool Used: Standard Protege
+Number of mouse clicks: 7
+Number of keys pressed:  103
+Total of time used: 0 hour, 0 minutes, 50 seconds, 980 miliseconds.
+
+Question 2: Every university is an educational institution
+Tool Used: Standard Protege
+Number of mouse clicks: 30
+Number of keys pressed:  57
+Total of time used: 0 hour, 2 minutes, 58 seconds, 455 miliseconds.
+
+Question 3: If a person has a mother then that mother is a parent.
+Tool Used: Standard Protege
+Number of mouse clicks: 35
+Number of keys pressed:  276
+Total of time used: 0 hour, 7 minutes, 30 seconds, 756 miliseconds.
+
+Question 4: Any educational institution that awards a medical degree is a medical school.
+Tool Used: Standard Protege
+Number of mouse clicks: 14
+Number of keys pressed:  147
+Total of time used: 0 hour, 1 minutes, 36 seconds, 34 miliseconds.
+
+Question 5: If a person's brother has a son, then that son is the first person's nephew.
+Tool Used: Standard Protege
+Number of mouse clicks: 62
+Number of keys pressed:  894
+Total of time used: 0 hour, 8 minutes, 48 seconds, 33 miliseconds.
+
+Question 6: All forests are more biodiverse than any desert.
+Tool Used: Standard Protege
+Number of mouse clicks: 18
+Number of keys pressed:  936
+Total of time used: 0 hour, 6 minutes, 39 seconds, 556 miliseconds.
+
+Question 7: Every parent is a Human.
+Tool Used: ROWLTab Plugin
+Number of mouse clicks: 6
+Number of keys pressed:  66
+Total of time used: 0 hour, 0 minutes, 34 seconds, 751 miliseconds.
+
+Question 8: Every educational institution is an organization
+Tool Used: ROWLTab Plugin
+Number of mouse clicks: 12
+Number of keys pressed:  49
+Total of time used: 0 hour, 0 minutes, 43 seconds, 445 miliseconds.
+
+Question 9: If a person has a parent who is female, then this parent is a mother.
+Tool Used: ROWLTab Plugin
+Number of mouse clicks: 12
+Number of keys pressed:  170
+Total of time used: 0 hour, 1 minutes, 51 seconds, 931 miliseconds.
+
+Question 10: Any university that is funded by a state government is a public university.
+Tool Used: ROWLTab Plugin
+Number of mouse clicks: 15
+Number of keys pressed:  93
+Total of time used: 0 hour, 1 minutes, 13 seconds, 901 miliseconds.
+
+Question 11: If a person has a female child, then that person would have that female child as her daughter.
+Tool Used: ROWLTab Plugin
+Number of mouse clicks: 52
+Number of keys pressed:  862
+Total of time used: 0 hour, 6 minutes, 34 seconds, 332 miliseconds.
+
+Question 12: All teenagers are younger than all twens.
+Tool Used: ROWLTab Plugin
+Number of mouse clicks: 20
+Number of keys pressed:  208
+Total of time used: 0 hour, 2 minutes, 2 seconds, 450 miliseconds.
+
+
+
+################## Usability Question Answers###################
+
+Question: ROWL is a useful tool to help with ontology modeling.
+Answer:  Strongly Agree (+3)
+
+Question: Modeling rules with the ROWL tab was easier for me than modeling without it.
+Answer:  Strongly Agree (+3)
+
+Question: Given some practice, I think I will find modeling rules with the ROWL tab easier than modeling without it.
+Answer:  Agree (+2)
+
+Question: The ROWL tab is better for ontology modeling than the SWRL tab.
+Answer:  Strongly Agree (+3)
+
+
+
+System closed at: 6:13:39 PM
+
+

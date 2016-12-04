@@ -1,0 +1,11 @@
+If a person's brother has a son, then that son is the first person's nephew.
+#Person(?x) ^ hasBrother(?x,?y) ^ hasSon(?y,?z) -> hasNephew(?x,?z)
+
+If a person has a female child, then that person would have that female child as her daughter.
+#Person(?x) ^ hasChild(?x,?y) ^ Female(?y) -> hasDaughter(?x,?y)
+
+All forests are more biodiverse than any desert.
+#Forest(?x) ^ Desert(?y) -> moreBiodiverseThan(?x,?y)
+
+All teenagers are younger than all twens.
+#Teenager(?x) ^ Twen(?y) -> youngerThan(?x,?y)

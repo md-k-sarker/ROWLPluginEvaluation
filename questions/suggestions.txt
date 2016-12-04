@@ -1,0 +1,78 @@
+#OWLClass:
+#OWLProperties:
+
+
+#Every father is a parent.
+#Father(?x) -> Parent(?x)
+OWLClass: Father, Parent
+OWLProperties: 
+
+
+#Every university is an educational institution
+#University(?x) -> EducationalInstitution(?x)
+OWLClass: University, EducationalInstitution
+OWLProperties: 
+
+
+#If a person has a mother then that mother is a parent.
+#Person(?x) ^ hasMother(?x,?y) -> Parent(?y)
+OWLClass: Person, Parent
+OWLProperties: hasMother
+
+
+#Any educational institution that awards a medical degree is a medical school.
+#EducationalInstitution(?x) ^ awards(?x,?y) ^ MedicalDegree(?y) -> MedicalSchool(?x)
+OWLClass: EducationalInstitution, MedicalDegree, MedicalSchool
+OWLProperties: awards
+
+
+#If a person's brother has a son, then that son is the first person's nephew.
+#Person(?x) ^ hasBrother(?x,?y) ^ hasSon(?y,?z) -> hasNephew(?x,?z)
+OWLClass: Person 
+OWLProperties: hasBrother, hasSon, hasNephew
+
+
+#All forests are more biodiverse than any desert.
+#Forest(?x) ^ Desert(?y) -> moreBiodiverseThan(?x,?y)
+OWLClass: Forest, Desert
+OWLProperties: moreBiodiverseThan
+
+
+#Every parent is a Human.
+#Parent(?x) -> Human(?x)
+OWLClass: Parent, Human
+OWLProperties: 
+
+
+#Every educational institution is an organization
+#EducationalInstitution(?x) -> Organization(?x)
+OWLClass: EducationalInstitution, Organization
+OWLProperties: 
+
+
+#If a person has a parent who is female, then this parent is a mother.
+#Person(?x) ^ hasParent(?x,?y) ^ Female(?y) -> Mother(?y)
+OWLClass: Person, Female, Mother
+OWLProperties: hasParent
+
+
+#Any university that is funded by a state government is a public university.
+#University(?x) ^ fundedBy(?x,?y) ^ StateGovernment(?y) -> PublicUniversity(?x)
+OWLClass: University, StateGovernment, PublicUniversity
+OWLProperties: fundedBy
+
+
+#If a person has a female child, then that person would have that female child as her daughter.
+#Person(?x) ^ hasChild(?x,?y) ^ Female(?y) -> hasDaughter(?x,?y)
+OWLClass: Person, Female
+OWLProperties: hasChild, hasDaughter
+
+
+#All teenagers are younger than all twens.
+#Teenager(?x) ^ Twen(?y) -> youngerThan(?x,?y)
+OWLClass: Teenager, Twen
+OWLProperties: youngerThan
+
+
+
+

@@ -1,0 +1,248 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.wright.edu/dase/ex"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://www.wright.edu/dase/ex">
+    <Prefix name="" IRI="http://www.wright.edu/dase/ex"/>
+    <Prefix name="ex" IRI="http://www.wright.edu/dase/ex#"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Prefix name="evaluation" IRI="http://www.wright.edu/dase/Evaluation#"/>
+    <Prefix name="untitled-ontology-424" IRI="http://www.semanticweb.org/sarker/ontologies/2016/10/untitled-ontology-424#"/>
+    <Declaration>
+        <Class abbreviatedIRI="evaluation:Parent"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="evaluation:hasSon"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="freshObjectProperty1"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="evaluation:EducationalInstitution"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="evaluation:Forest"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="evaluation:youngerThan"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="evaluation:Mother"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="evaluation:hasBrother"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="evaluation:Teenager"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Parent"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="evaluation:hasMother"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="evaluation:hasNephew"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="evaluation:PublicUniversity"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="evaluation:moreBiodiverseThan"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="evaluation:hasParent"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="evaluation:Desert"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="evaluation:Person"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="evaluation:fundedBy"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="evaluation:hasDaughter"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="evaluation:Female"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="evaluation:StateGovernment"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#University"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="evaluation:MedicalDegree"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="evaluation:University"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="evaluation:Organization"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="evaluation:Father"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="evaluation:Human"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="evaluation:awards"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="evaluation:Twen"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="evaluation:hasChild"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="evaluation:MedicalSchool"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="DASE_RULE"/>
+    </Declaration>
+    <EquivalentClasses>
+        <Class abbreviatedIRI="evaluation:PublicUniversity"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#University"/>
+            <ObjectAllValuesFrom>
+                <ObjectProperty abbreviatedIRI="evaluation:fundedBy"/>
+                <Class abbreviatedIRI="evaluation:StateGovernment"/>
+            </ObjectAllValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <SubClassOf>
+        <Annotation>
+            <AnnotationProperty IRI="DASE_RULE"/>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">R6___Forest(?x)  Desert(?y) -&gt; moreBiodiverseThan(?x, ?y)______http://www.w3.org/2002/07/owl#topObjectProperty___http://www.wright.edu/dase/exfreshObjectProperty1</Literal>
+        </Annotation>
+        <Class abbreviatedIRI="evaluation:Desert"/>
+        <ObjectHasSelf>
+            <ObjectProperty IRI="freshObjectProperty1"/>
+        </ObjectHasSelf>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="evaluation:EducationalInstitution"/>
+        <Class abbreviatedIRI="evaluation:Organization"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Annotation>
+            <AnnotationProperty IRI="DASE_RULE"/>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">R1___Father(?x) -&gt; Parent(?x) ___</Literal>
+        </Annotation>
+        <Class abbreviatedIRI="evaluation:Father"/>
+        <Class abbreviatedIRI="evaluation:Parent"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Annotation>
+            <AnnotationProperty IRI="DASE_RULE"/>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">R6___Forest(?x)  Desert(?y) -&gt; moreBiodiverseThan(?x, ?y)______http://www.w3.org/2002/07/owl#topObjectProperty___http://www.wright.edu/dase/exfreshObjectProperty1</Literal>
+        </Annotation>
+        <Class abbreviatedIRI="evaluation:Forest"/>
+        <ObjectHasSelf>
+            <ObjectProperty IRI="freshObjectProperty1"/>
+        </ObjectHasSelf>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="evaluation:Parent"/>
+        <Class abbreviatedIRI="evaluation:Human"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Annotation>
+            <AnnotationProperty IRI="DASE_RULE"/>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">R5___Person(?x) ^ hasBrother(?x, ?y) ^ Person(?z) ^hasSon(?y, ?z) -&gt; hasNephew(?x, ?z)______http://www.wright.edu/dase/exfreshObjectProperty1</Literal>
+        </Annotation>
+        <Class abbreviatedIRI="evaluation:Person"/>
+        <ObjectHasSelf>
+            <ObjectProperty IRI="freshObjectProperty1"/>
+        </ObjectHasSelf>
+    </SubClassOf>
+    <SubClassOf>
+        <Annotation>
+            <AnnotationProperty IRI="DASE_RULE"/>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">R2___University(?x) -&gt; EducationalInstitution(?x)___</Literal>
+        </Annotation>
+        <Class abbreviatedIRI="evaluation:University"/>
+        <Class abbreviatedIRI="evaluation:EducationalInstitution"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Annotation>
+            <AnnotationProperty IRI="DASE_RULE"/>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">R4___EducationalInstitution(?x) ^ MedicalDegree(?y) ^ awards(?x, ?y) -&gt; MedicalSchool(?x)___</Literal>
+        </Annotation>
+        <ObjectIntersectionOf>
+            <Class abbreviatedIRI="evaluation:EducationalInstitution"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty abbreviatedIRI="evaluation:awards"/>
+                <Class abbreviatedIRI="evaluation:MedicalDegree"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+        <Class abbreviatedIRI="evaluation:MedicalSchool"/>
+    </SubClassOf>
+    <SubClassOf>
+        <ObjectIntersectionOf>
+            <Class abbreviatedIRI="evaluation:Female"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty abbreviatedIRI="evaluation:hasChild"/>
+                <Class abbreviatedIRI="evaluation:Person"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty abbreviatedIRI="evaluation:hasDaughter"/>
+            <Class abbreviatedIRI="evaluation:Person"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Annotation>
+            <AnnotationProperty IRI="DASE_RULE"/>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">R3___Person(?x) ^ hasMother(?x, ?y) -&gt;Parent(?y)___</Literal>
+        </Annotation>
+        <ObjectSomeValuesFrom>
+            <ObjectInverseOf>
+                <ObjectProperty abbreviatedIRI="evaluation:hasMother"/>
+            </ObjectInverseOf>
+            <Class abbreviatedIRI="evaluation:Person"/>
+        </ObjectSomeValuesFrom>
+        <Class abbreviatedIRI="evaluation:Parent"/>
+    </SubClassOf>
+    <SubObjectPropertyOf>
+        <Annotation>
+            <AnnotationProperty IRI="DASE_RULE"/>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">R6___Forest(?x)  Desert(?y) -&gt; moreBiodiverseThan(?x, ?y)______http://www.w3.org/2002/07/owl#topObjectProperty___http://www.wright.edu/dase/exfreshObjectProperty1</Literal>
+        </Annotation>
+        <ObjectPropertyChain>
+            <ObjectProperty IRI="freshObjectProperty1"/>
+            <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+            <ObjectProperty IRI="freshObjectProperty1"/>
+        </ObjectPropertyChain>
+        <ObjectProperty abbreviatedIRI="evaluation:moreBiodiverseThan"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <Annotation>
+            <AnnotationProperty IRI="DASE_RULE"/>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">R5___Person(?x) ^ hasBrother(?x, ?y) ^ Person(?z) ^hasSon(?y, ?z) -&gt; hasNephew(?x, ?z)______http://www.wright.edu/dase/exfreshObjectProperty1</Literal>
+        </Annotation>
+        <ObjectPropertyChain>
+            <ObjectProperty IRI="freshObjectProperty1"/>
+            <ObjectProperty abbreviatedIRI="evaluation:hasBrother"/>
+            <ObjectProperty abbreviatedIRI="evaluation:hasSon"/>
+            <ObjectProperty IRI="freshObjectProperty1"/>
+        </ObjectPropertyChain>
+        <ObjectProperty abbreviatedIRI="evaluation:hasNephew"/>
+    </SubObjectPropertyOf>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.2.5.20160517-0735) https://github.com/owlcs/owlapi -->
+

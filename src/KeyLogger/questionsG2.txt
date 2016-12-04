@@ -1,0 +1,66 @@
+#Specify Group
+#If group=1 then start rowl first
+#If group=2 then start protege first
+
+__Group__=2
+#All examples come in pairs of twos, one is given for conversion using ROWL, the other is given for conversion using standard Protege.
+
+
+#Using Bare Protege
+
+#Easy
+Every parent is a Human.
+#Parent(?x) -> Human(?x)
+
+Every educational institution is an organization
+#EducationalInstitution(?x) -> Organization(?x)
+
+
+
+#Intermediate:
+
+If a person has a parent who is female, then this parent is a mother.
+#Person(?x) ^ hasParent(?x,?y) ^ Female(?y) -> Mother(?y)
+
+Any university that is funded by a state government is a public university.
+#University(?x) ^ fundedBy(?x,?y) ^ StateGovernment(?y) -> PublicUniversity(?x)
+
+
+
+#Difficult:
+
+If a person has a female child, then that person would have that female child as her daughter.
+#Person(?x) ^ hasChild(?x,?y) ^ Female(?y) -> hasDaughter(?x,?y)
+
+All teenagers are younger than all twens.
+#Teenager(?x) ^ Twen(?y) -> youngerThan(?x,?y)
+
+
+
+
+#Using ROWLTab:
+
+#Easy
+Every father is a parent.
+#Father(?x) -> Parent(?x)
+
+Every university is an educational institution
+#University(?x) -> EducationalInstitution(?x)
+
+
+#Intermediate:
+
+If a person has a mother then that mother is a parent.
+#Person(?x) ^ hasMother(?x,?y) -> Parent(?y)
+
+Any educational institution that awards a medical degree is a medical school.
+#EducationalInstitution(?x) ^ awards(?x,?y) ^ MedicalDegree(?y) -> MedicalSchool(?x)
+
+
+#Difficult:
+
+If a person's brother has a son, then that son is the first person's nephew.
+#Person(?x) ^ hasBrother(?x,?y) ^ hasSon(?y,?z) -> hasNephew(?x,?z)
+
+All forests are more biodiverse than any desert.
+#Forest(?x) ^ Desert(?y) -> moreBiodiverseThan(?x,?y)

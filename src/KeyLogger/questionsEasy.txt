@@ -1,0 +1,11 @@
+Every father is a parent.
+#Father(?x) -> Parent(?x)
+
+Every parent is a Human.
+#Parent(?x) -> Human(?x)
+
+Every university is an educational institution
+#University(?x) -> EducationalInstitution(?x)
+
+Every educational institution is an organization
+#EducationalInstitution(?x) -> Organization(?x)
